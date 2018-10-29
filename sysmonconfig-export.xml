@@ -211,6 +211,10 @@
 			<Image condition="is">C:\Program Files\Synaptics\SynTP\SynTPEnh.exe</Image>
 			<Image condition="is">C:\Program Files\Synaptics\SynTP\SynTPEnhService.exe</Image>
 			<!--SECTION: Custom Apps-->
+			<Image condition="is">C:\Program Files\SplunkUniversalForwarder\bin\splunkd.exe</Image><!--Splunk Universal Forwarder-->
+			<Image condition="is">C:\Program Files\Splunk\bin\splunkd.exe</Image><!--Splunk daemon-->
+			<Image condition="is">C:\Program Files (x86)\SplunkUniversalForwarder\bin\splunkd.exe</Image><!--Splunk Universal Forwarder-->
+			<Image condition="is">C:\Program Files (x86)\Splunk\bin\splunkd.exe</Image><!--Splunk daemon-->
 			<!--SECTION: Labtech -->
 			<!--Since Labtech nests its processes, the following exclusions could be exploited, remove if you do not need-->
 			<!--TODO: Will define these more in the future-->

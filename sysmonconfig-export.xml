@@ -253,13 +253,14 @@
 			<Image condition="is">C:\Program Files\Dell\SupportAssist\pcdrcui.exe</Image> <!--Dell:SupportAssist: routine actions-->
 			<Image condition="is">C:\Program Files\Dell\SupportAssist\koala.exe</Image> <!--Dell:SupportAssist: routine actions-->
 			<ParentCommandLine condition="end with">"-outc=C:\ProgramData\Dell\CommandUpdate\inventory.xml" "-logc=C:\ProgramData\Dell\CommandUpdate\scanerrs.xml" "-lang=en" "-enc=UTF-16" </ParentCommandLine>
-		</ProcessCreate>
+		
 			<!-- SECTION: Splunk-->
 				<!--COMMENT: without omitting the splunkd image from a universal forwarder or full installation, you will get a log loop from connection logging, logging everytime the forwarder sends logs to an indexer on 9997, and then logging the connection it made to send the log, over and over, its turtles all the way down.-->
-			<Image condition="is">C:\Program Files\SplunkUniversalForwarder\bin\splunkd.exe</Image><!--Splunk Universal Forwarder-->
-			<Image condition="is">C:\Program Files\Splunk\bin\splunkd.exe</Image><!--Splunk daemon-->
-			<Image condition="is">C:\Program Files (x86)\SplunkUniversalForwarder\bin\splunkd.exe</Image><!--Splunk Universal Forwarder-->
-			<Image condition="is">C:\Program Files (x86)\Splunk\bin\splunkd.exe</Image><!--Splunk daemon-->
+			<ParentImage condition="is">C:\Program Files\SplunkUniversalForwarder\bin\splunkd.exe</ParentImage><!--Splunk Universal Forwarder-->
+			<ParentImage condition="is">C:\Program Files\Splunk\bin\splunkd.exe</ParentImage><!--Splunk daemon-->
+			<ParentImage condition="is">C:\Program Files (x86)\SplunkUniversalForwarder\bin\splunkd.exe</ParentImage><!--Splunk Universal Forwarder-->
+			<ParentImage condition="is">C:\Program Files (x86)\Splunk\bin\splunkd.exe</ParentImage><!--Splunk daemon-->
+		</ProcessCreate>
 		
 	<!--SYSMON EVENT ID 2 : FILE CREATION TIME RETROACTIVELY CHANGED IN THE FILESYSTEM [FileCreateTime]-->
 		<!--COMMENT:	[ https://attack.mitre.org/wiki/Technique/T1099 ] -->
